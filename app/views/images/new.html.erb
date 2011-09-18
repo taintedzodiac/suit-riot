@@ -1,0 +1,25 @@
+<%= form_for @image, :html => {:multipart => true, :accept => "image/gif,image/png,image/jpg"} do |f| %>
+
+	<div class="clearfix">
+		<h4>
+			Please note: SuitRiot is for sharing images related to men's fashion. Unrelated or inappropriate images will be removed, and repeated uploading of such images will result in account deletion.
+		
+			Use the form below to select a JPEG, PNG, or GIF to upload. Maximum file size is 5 MB.
+		</h4>
+	</div>
+
+	<% if flash[:error] %>
+	<div class="alert-message error">
+		<%= flash[:error] %>
+	</div>
+	<% end %>
+	
+ 	<div class="clarfix" style="width: 400px;" >
+   	<%= file_field 'upload', 'datafile' %>
+ 	</div>
+	<p>
+ 	<div class="clearfix">
+		<%= f.submit "Upload image", :class => "btn primary" %>
+ 	</div>
+
+<% end %>

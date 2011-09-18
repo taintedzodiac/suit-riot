@@ -1,0 +1,39 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+
+# RoR
+log/**/*
+api/log/**/*
+tmp/**/*
+api/tmp/**/*
+bin/*
+vendor/gems/*
+!vendor/gems/cache/
+.sass-cache/*
+*.sqlite3
+*.db
+public/system/*
+db/seeds.rb
+
+# xcode
+*.mode1v3
+*.pbxuser
+*.perspective 
+*.perspectivev3
+*.pyc 
+*~.nib/
+build/*
+xcuserdata
+
+# bbedit
+*.bbprojectd
+
+# Sublime Text 2
+*.sublime-project
+*.sublime-workspace
+
+# other
+.DS_Store
+*.tmproj

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SuitRiot</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<%= render :partial => 'shared/tabs' %>
+<div class="container">
+	<% if flash[:notice] %>
+		<div class="alert-message success" data-alert="alert">
+	  	<a class="close" href="#">&times;</a>
+	  	<p><%= flash[:notice] %></p>
+		</div>
+ 	<% end %>
+	<% if flash[:error] %>
+	  <p class="error"><%= flash[:error] %></p>
+	<% end %>
+	<%= params %>
+	<%= yield %>
+</div>
+
+</body>
+</html>

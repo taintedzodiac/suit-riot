@@ -1,0 +1,29 @@
+<h1>Login</h1>
+
+<%= form_for @user_session, :url => user_session_path do |f| %>
+  <%= f.error_messages %>
+	<div class="clearfix">
+  	<%= f.label :login %>
+		<div class="input">
+  		<%= f.text_field :login %>
+		</div>
+  </div>
+	<div class="clearfix">
+  	<%= f.label :password %>
+		<div class="input">
+  		<%= f.password_field :password %>
+		</div>
+	</div>
+	<div class="clearfix">
+		<div class="input">
+			<ul class="inputs-list"> 
+		    <li> 
+		      <label> 
+		        <%= f.check_box :remember_me %> Remember me
+		      </label> 
+		    </li>
+			</ul>
+		</div>
+	</div>
+  <%= f.submit "Login", :class => 'btn large primary' %>
+<% end %>

@@ -1,0 +1,55 @@
+<% if current_user %>
+<h4>Overall</h4>
+<div class="clearfix"> 
+  <ul class="inputs-list"> 
+    <li>
+			<%= voting_pane.collection_radio :overall_score, 
+																				[['1', 'Looking good!'], ['-1', 'Not a fan.']], 
+																				:first, :last %>
+    </li>
+  </ul> 
+</div><!-- /clearfix -->
+<h4>Jacket + Shirt(s)</h4>
+<div class="clearfix"> 
+  <ul class="inputs-list"> 
+    <li>
+			<%= voting_pane.collection_radio :tops_score, 
+																				[['1', 'Like'], ['-1', 'Dislike'], ['0', 'not pictured']], 
+																				:first, :last %>
+		</li>
+  </ul> 
+</div><!-- /clearfix -->
+<h4>Pants</h4>
+<div class="clearfix"> 
+  <ul class="inputs-list"> 
+    <li>
+			<%= voting_pane.collection_radio :pants_score, 
+																				[['1', 'Like'], ['-1', 'Dislike'], ['0', 'not pictured']], 
+																				:first, :last %>
+		</li>
+  </ul> 
+</div><!-- /clearfix -->
+<h4>Shoes</h4>
+<div class="clearfix"> 
+  <ul class="inputs-list"> 
+    <li>
+			<%= voting_pane.collection_radio :shoes_score, 
+																				[['1', 'Like'], ['-1', 'Dislike'], ['0', 'not pictured']], 
+																				:first, :last %>
+		</li>
+  </ul> 
+</div><!-- /clearfix -->
+<h4>Accessories (watch/belt/etc.)</h4>
+<div class="clearfix"> 
+  <ul class="inputs-list"> 
+    <li>
+			<%= voting_pane.collection_radio :accessories_score, 
+																				[['1', 'Like'], ['-1', 'Dislike'], ['0', 'not pictured']], 
+																				:first, :last %>
+		</li>
+  </ul> 
+</div><!-- /clearfix -->
+<center><%= voting_pane.submit "Submit",	:class => 'btn large primary' %></center>
+<% else %>
+<%= link_to 'Log in', login_path %> or <%= link_to 'Create an Account', new_account_path %> in order to vote on images
+<% end %>

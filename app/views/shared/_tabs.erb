@@ -1,0 +1,21 @@
+<div class="topbar-wrapper" style="z-index: 5;"> 
+  <div class="topbar"> 
+    <div class="topbar-inner"> 
+      <div class="container"> 
+        <h3><%= link_to 'Suit Riot', root_path %></h3>
+				<ul class="nav">
+					<li><%= link_to 'Submit Image', submit_path %></li>
+				</ul>
+        <ul class="nav secondary-nav"> 
+          <% if current_user %>
+						<li><%= link_to current_user.login, account_path %></li>
+						<li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
+					<% else %>
+						<li><%= link_to 'Log In', login_path, :method => :new %></li>
+						<li><a href="/users/new">Create Account</a></li>
+					<% end %>
+        </ul> 
+      </div> 
+    </div><!-- /topbar-inner --> 
+  </div><!-- /topbar --> 
+</div><!-- /topbar-wrapper -->

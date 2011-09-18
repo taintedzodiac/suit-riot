@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="span12 columns">
+		<div class="well">
+			<h6>My Images <%= link_to "+", new_image_path %></h6>
+			<% @user.images.reverse.each do |image| %>
+				<%= link_to image_tag(image.url, :style => 'max-height: 100px; width: 100px;'), image %>
+			<% end %>
+		</div>
+	</div>
+	<div class="span4 columns">
+		<div class="well" align=right>
+			<%= link_to 'Manage Account', edit_account_path %>
+		</div>
+	</div>
+</div>

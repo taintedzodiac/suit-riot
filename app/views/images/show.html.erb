@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="span10 columns offset3">
+		<% if current_user.nil? %>
+		<div class="alert-message info">
+			SuitRiot is a web app for sharing and voting on pictures of men's fashion. Create an account for free in order to share your own images and save your voting history.
+		</div>
+		<% end %>
+	</div>
+</div>
+<div class="row">
+	<div class="span10 columns">
+		<center>
+			<div class="well">
+				<%= image_tag(@image.url, :style => 'max-height: 720px; max-width: 540px;') %>
+			</div>
+		</center>
+		<div class="well">
+			<div>
+				Submitted by <b><%= @image.user.login %></b> <%= time_ago_in_words(@image.created_at) %> ago.<br />
+				Rated <%= @image.votes.count %> times.
+			</div>
+			<%= render :partial => 'shared/score_block', :object => @image unless @image.votes.count < 1%>
+		</div>
+	</div>
+	<div class="span6 columns">
+		<div class="well">
+			<% if @image.user == current_user %>
+				<h6>This Image is Yours</h6>
+				<%= button_to("Delete Image", @image, :method => :delete, :class => 'btn danger', :confirm => 'Permanently delete this image?') %>
+			<% else %>
+				<h3>Judge this Outfit</h3>
+				<div class="clearfix">
+					<% @vote = Vote.new if @vote.nil? %>
+					<%= form_for @vote do |f| %>
+						<input id="image_id" name="vote[image_id]" type="hidden" value="<%= @image.id %>" />
+						<%= render :partial => 'shared/voting_pane', :object => f %>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+		<center>©2011 SuitRiot</center>
+	</div>
+</div>
