@@ -4,7 +4,7 @@ class VotesController < ApplicationController
     @vote = Vote.new(params[:vote])
     @vote.user = current_user unless current_user.nil?
     if @vote.save
-      flash.now[:notice] = "Your vote has been saved."
+      flash[:notice] = "Your vote has been saved."
     end
     redirect_back_or_default root_url
   end
