@@ -24,6 +24,9 @@
 	</div>
 	<div class="span6 columns">
 		<div class="well">
+			<div align=right>
+				<%= tweet_button(:via => "suitriot", :text => "Like: #{@image.user.login}'s outfit", :count => "none") %>
+			</div>
 			<% if @image.user == current_user %>
 				<h6>This Image is Yours</h6>
 				<%= button_to("Delete Image", @image, :method => :delete, :class => 'btn danger', :confirm => 'Permanently delete this image?') %>

@@ -6,7 +6,7 @@
 				<ul class="nav">
 					<li><%= link_to 'Submit Image', submit_path %></li>
 				</ul>
-        <ul class="nav secondary-nav"> 
+        <ul class="nav secondary-nav">
           <% if current_user %>
 						<li><%= link_to current_user.login, account_path %></li>
 						<li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
