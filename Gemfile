@@ -7,6 +7,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'pg'
 gem 'jquery-rails', '>= 1.0.12'
 gem 'simple_form'
+gem 'tweet-button'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
