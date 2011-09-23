@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      UserSession.create @user
       flash[:notice] = "Account registered!"
       redirect_back_or_default account_url
     else

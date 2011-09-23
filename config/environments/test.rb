@@ -32,4 +32,7 @@ SuitRiot::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  # Config webrat for integration testing
+  config.gem 'webrat', :version => ">=0.5.0"
 end
