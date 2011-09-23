@@ -4,10 +4,7 @@ class ImagesController < ApplicationController
   @@BUCKET = "suitriot"
   
   def index
-    flash.keep
-    @image = Image.random
-    @image.nil? ? (redirect_to account_path) 
-                : (redirect_to :action => 'show', :id => @image.id)
+    @images = Image.order(:created_at).limit(12)
   end
   
   def show

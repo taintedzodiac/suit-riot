@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="span10 columns offset3">
+		<% if current_user.nil? %>
+		<div class="alert-message info">
+			SuitRiot is a web app for sharing and voting on pictures of men's fashion. Create an account for free in order to share your own images and save your voting history.
+		</div>
+		<% end %>
+	</div>
+</div>
+<div class="row">
+	<div class="span16 columns">
+			<ul class="polaroids">
+				<% @images.each do |image| %>
+					<li>
+						<%= link_to image_tag(image.url), image_path(image.id), :title => image.user.login %>
+					</li>
+				<% end %>
+			</ul>
+	</div>
+</div>

@@ -5,6 +5,28 @@ include ImagesHelper
 # ===============
 # /images
 # ===============
+describe "/images INDEX" do
+  
+  before(:each) do
+    visit "/images"
+  end
+  
+  it "should respond successfully" do
+    response.should be_successful
+  end
+  
+  it "should show the navigation bar" do
+    response.should have_selector('div', :id => 'topbar')
+  end
+  
+  it "should have a polaroids section" do
+    response.should have_selector('ul', :class => 'polaroids')
+  end
+end
+
+# ===============
+# /images/:id
+# ===============
 describe "/images/1" do
   
   before(:each) do
@@ -15,6 +37,10 @@ describe "/images/1" do
     
     before(:each) do
       visit "/images/1"
+    end
+    
+    it "should respond successfully" do
+      response.should be_successful
     end
     
     it "should show the navigation bar" do
