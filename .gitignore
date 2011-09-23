@@ -16,6 +16,7 @@ vendor/gems/*
 *.db
 public/system/*
 db/seeds.rb
+webrat.log
 
 # xcode
 *.mode1v3
