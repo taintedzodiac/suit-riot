@@ -7,6 +7,11 @@ require 'rspec/rails'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+Webrat.configure do |config|
+  config.mode = :rails
+  config.open_error_files = false # prevents webrat from opening the browser
+end
+
 RSpec.configure do |config|
   # == Mock Framework
   #

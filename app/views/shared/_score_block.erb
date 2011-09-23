@@ -1,4 +1,4 @@
-<div>
+<div id="score-block">
 	<h6>Overall rating:</h6> <b><%= (score_block.votes.sum(:overall_score).to_f / score_block.votes.count.to_f * 100).to_i %>%</b> on <%= score_block.votes.count('overall_score') %> votes.
 	<h6>Jacket/Shirt(s) rating:</h6> <b><%= (score_block.votes.sum(:tops_score).to_f / score_block.votes.count.to_f * 100).to_i %>%</b> on <%= score_block.votes.count('tops_score') %> votes.
 	<h6>Pants rating:</h6> <b><%= (score_block.votes.sum(:pants_score).to_f / score_block.votes.count.to_f * 100).to_i %>%</b> on <%= score_block.votes.count('pants_score') %> votes.
