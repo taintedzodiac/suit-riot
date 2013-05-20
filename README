@@ -3,3 +3,5 @@ Suit Riot
 You can see a basic implementation of this code at http://www.suitriot.com
 
 Suit Riot is a web app written in Ruby on Rails, designed to allow users to share, view, and vote on images of men's wear. It began as a weekend project when I was learning Ruby on Rails. Nowadays it's just a sample app to show some of my early work.
+
+I've released this under a [CREATIVE COMMONS - ATTRIBUTION](http://creativecommons.org/licenses/by/3.0/) license.
